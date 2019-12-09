@@ -3,33 +3,15 @@
 Este teste é apresentado aos candidatos as vagas de desenvolvimento Front-end para avaliar os quesitos técnicos.
 
 ## Descrição
+Este projeto está sendo desenvolvido para um desafio de front-end da empresa Justa e o nome do projeto é CriptoMoedas.
+    Esse pequeno projeto consiste num dashboard simples com gráficos feitos em Charts.js, onde o front-end 
+    consumirá a API do BitcoinAverage e mostrará no dashboard os valores de algumas criptomoeadas e um gráfico informativo sobre as váriações dos seus valores. Informativos das moedas também em tabelas.
 
-Criar uma Single Page Application (SPA) de um dashboard com gráficos (ChartJS, ApexCharts, D3, etc.) e uma tabela para a exibição de dados (realizar requisições HTTP para exibir os dados na tabela, pode usar o [Public Apis](https://github.com/public-apis/public-apis)).
+### Ferramentas Utilizadas
 
-Você deve fazer um fork do projeto e deixar publico para que possamos analisar commits e o processo de desenvolvimento.
-
-Links com conteúdo para alguns dos temas citados serão fornecidos no fim da descrição do desafio.
-
-### Requisitos
-
-- Algum framework/biblioteca, como React, Vue, Angular 2+ ou JavaScript Vanilla.
-- Biblioteca para requisições HTTP (ex.: Axios), ou Fetch API.
-- Algum pré-processador CSS, como SASS, LESS, ou algum outro.
-- Ser responsivo
-- Usar algum linter para o JavaScript/TypeScript (ESLint, TSLint).
-
-### Avaliação
-
-Entre os critérios de avaliação estão:
-
-- Usabilidade
-- Código limpo e organização
-- Documentação de código
-- Documentação do projeto (readme)
-- Performance
-
-### Links Úteis
-
-- [GitFlow](https://medium.com/trainingcenter/utilizando-o-fluxo-git-flow-e63d5e0d5e04)
-- [Design de aplicações](https://material.io/design/)
-- [Clean Code](https://simpleprogrammer.com/clean-code-principles-better-programmer/)
+- Angular 8.
+- SASS - SCSS.
+- Chats.js
+- FontAwesome.
+- Public API'S - BitcoinAverage
+- TsLint

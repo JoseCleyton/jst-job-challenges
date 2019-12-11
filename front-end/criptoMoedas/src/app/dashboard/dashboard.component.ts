@@ -139,12 +139,16 @@ export class DashboardComponent implements OnInit {
 
   // Atualiza as informação do DashBoard a cada 15 segundos
   private atualizaDashboard(){
+    this.buscarCotacaoBitcoin()
+    this.buscarCotacaoLitecoin()
+    this.buscarCotacaoEthereum()  
+    /*
     setInterval(()=>{
       this.buscarCotacaoBitcoin()
       this.buscarCotacaoLitecoin()
       this.buscarCotacaoEthereum()  
     },15000)
-   
+   */
   }
 
 }

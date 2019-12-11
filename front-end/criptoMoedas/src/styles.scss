@@ -34,8 +34,8 @@ body {
 
         a {
             cursor: $tipoPonteiro;
-            color: $corPonteiro;
-         } 
+            color: $corPonteiro;            
+         }
 }
 
 .titulo {
@@ -56,6 +56,7 @@ body {
     border-left: solid 3px $borderRed;
     border-right: solid 3px $borderRed;
 }
+
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

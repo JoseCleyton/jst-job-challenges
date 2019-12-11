@@ -1,0 +1,145 @@
+
+<div class="container-fluid">
+    <div class="d-sm-flex align-items-center titulo">
+        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>  
+    </div>
+    <!--
+      <div class="justify-content-center" class="link">
+        <h6><a><strong>Dashboard</strong></a>->das</h6>      
+      </div>
+    -->  
+    <div class="row">
+        <div class="col-xl-4 col-md-6 mb-12">
+          
+            <div class="card shadow-lg p-3 mb-5 bg-white rounded borderGreen">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="font-weight-bold text-primary text-uppercase mb-1 text-center">Bitcoin</div>
+                    <div class="text-xs font-weight-bold text-primary text-lowercase mb-1">última cotação:</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800 d-flex justify-content-center">
+                      
+                          <mat-progress-bar *ngIf="carregamento" mode="buffer"></mat-progress-bar>
+                          <div class="divider"></div>
+                                {{ cotacaoMoedas['bitcoin'].last | currency :'BRL':true }}
+                                {{ mensagem }}
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fas fa-book-open fa-2x text-gray-300"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="col-xl-4 col-md-6 mb-12">
+            <div class="card shadow-lg p-3 mb-5 bg-white rounded borderBlue">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="font-weight-bold text-primary text-uppercase mb-1 text-center">Litecoin</div>
+                    <div class="text-xs font-weight-bold text-primary text-lowercase mb-1">última cotação:</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800 d-flex justify-content-center">
+
+                        <mat-progress-bar *ngIf="carregamento" mode="buffer"></mat-progress-bar>
+                                 {{ cotacaoMoedas['litecoin'].last | currency :'BRL':true }}
+                                 {{ mensagem }}
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fas fa-book-open fa-2x text-gray-300"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div id="card" class="col-xl-4 col-md-6 mb-12">
+            <div class="card shadow-lg p-3 mb-5 bg-white rounded borderRed">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="font-weight-bold text-primary text-uppercase mb-1 text-center">Ethereum</div>
+                    <div class="text-xs font-weight-bold text-primary text-lowercase mb-1">última cotação:</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800 d-flex justify-content-center">
+                        
+                      <mat-progress-bar *ngIf="carregamento" mode="buffer"></mat-progress-bar>
+                          {{ cotacaoMoedas['ethereum'].last | currency :'BRL':true }}
+                          {{ mensagem }}
+
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fas fa-book-open fa-2x text-gray-300"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="container offset-lg-9" id="btnGrafico">
+          <button (click)="montarGraficoBitcoin()" class="btn btn-success">BiT</button>
+          <button (click)="montarGraficoLitecoin()" class="btn btn-primary">LIT</button>
+          <button (click)="montarGraficoEthereum()" class="btn btn-danger ">ETH</button>
+
+        </div>
+        <div id="grafico" *ngIf="graficoBitcoin" class="col-xl-12 col-md-12 mb-12">
+            <div class="card border-left-success shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div  class="col mr-2">
+                        <canvas *ngIf="carregarGrafico" baseChart
+                        [datasets]="grafico.lineChartData"
+                        [labels]="grafico.lineChartLabels"
+                        [colors]="grafico.lineChartColors"
+                        [legend]="grafico.lineChartLegend"
+                        [chartType]="grafico.lineChartType"
+                        [plugins]="grafico.lineChartPlugins">
+                      </canvas>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="grafico" *ngIf="graficoLitecoin" class="col-xl-12 col-md-12 mb-12">
+                <div class="card border-left-success shadow h-100 py-2">
+                  <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                      <div  class="col mr-2">
+                            <canvas *ngIf="carregarGrafico" baseChart
+                            [datasets]="grafico.lineChartData"
+                            [labels]="grafico.lineChartLabels"
+                            [colors]="grafico.lineChartColors"
+                            [legend]="grafico.lineChartLegend"
+                            [chartType]="grafico.lineChartType"
+                            [plugins]="grafico.lineChartPlugins">
+                          </canvas>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="grafico" *ngIf="graficoEthereum" class="col-xl-12 col-md-12 mb-12">
+                    <div class="card border-left-success shadow h-100 py-2">
+                      <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                          <div  class="col mr-2">
+                                <canvas *ngIf="carregarGrafico" baseChart
+                                [datasets]="grafico.lineChartData"
+                                [labels]="grafico.lineChartLabels"
+                                [colors]="grafico.lineChartColors"
+                                [legend]="grafico.lineChartLegend"
+                                [chartType]="grafico.lineChartType"
+                                [plugins]="grafico.lineChartPlugins">
+                              </canvas>
+                            </div>
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                
+          
+    </div>
+</div>

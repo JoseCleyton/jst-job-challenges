@@ -1,1 +1,62 @@
-/* You can add global styles to this file, and also import other style files */
+// Custom.scss
+// Opção A: Importa todo o Bootstrap
+$corPonteiro: #1E90FF;
+$tipoPonteiro: pointer;
+$borderGreen: #006400;
+$borderBlue: #1E90FF;
+$borderRed: #FF0000;
+
+@import "../node_modules/bootstrap//scss/bootstrap.scss";
+// Custom.scss
+// Opção B: Importa partes do Bootstrap
+
+
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+// Partes opcionais
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/images";
+@import "../node_modules/bootstrap/scss/code";
+@import "../node_modules/bootstrap/scss/grid";
+
+body {
+    background: #F8F8FF;
+}
+
+ .link{ 
+     
+    margin-top: 0px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+
+        a {
+            cursor: $tipoPonteiro;
+            color: $corPonteiro;
+         } 
+}
+
+.titulo {
+    margin-bottom: 10px;
+}
+
+.borderGreen {
+    border-left: solid 3px $borderGreen;
+    border-right: solid 3px $borderGreen;
+}
+
+.borderBlue {
+    border-left: solid 3px $borderBlue;
+    border-right: solid 3px $borderBlue;
+}
+
+.borderRed {
+    border-left: solid 3px $borderRed;
+    border-right: solid 3px $borderRed;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+

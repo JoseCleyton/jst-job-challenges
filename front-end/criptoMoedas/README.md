@@ -7,6 +7,10 @@
 
     Há um menu que mostra uma tabela com as siglas e nomes das Cripto Moeadas.
 
+ ## Observações Sobre a API
+
+    A API só libera, de forma gratuita, 5000 requisições por mês e possui um limite de 700 requisições a cada 1440 minutos. E apenas 1 chave de API no plano gratuito.
+
 ## Pré-requisitos
 
     - Node

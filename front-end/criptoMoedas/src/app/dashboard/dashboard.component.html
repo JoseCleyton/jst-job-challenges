@@ -17,7 +17,6 @@
                           <mat-progress-bar *ngIf="carregamento" mode="buffer"></mat-progress-bar>
                           <div class="divider"></div>
                                 {{ cotacaoMoedas['bitcoin'].last | currency :'BRL':true }}
-                                {{ mensagem }}
                     </div>
                   </div>
                   <div class="col-auto">
@@ -38,7 +37,6 @@
 
                         <mat-progress-bar *ngIf="carregamento" mode="buffer"></mat-progress-bar>
                                  {{ cotacaoMoedas['litecoin'].last | currency :'BRL':true }}
-                                 {{ mensagem }}
                     </div>
                   </div>
                   <div class="col-auto">
@@ -59,8 +57,6 @@
                         
                       <mat-progress-bar *ngIf="carregamento" mode="buffer"></mat-progress-bar>
                           {{ cotacaoMoedas['ethereum'].last | currency :'BRL':true }}
-                          {{ mensagem }}
-
                     </div>
                   </div>
                   <div class="col-auto">

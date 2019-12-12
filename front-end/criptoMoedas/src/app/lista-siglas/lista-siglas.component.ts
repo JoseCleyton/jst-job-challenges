@@ -6,13 +6,38 @@ import { BitcoinAverageService } from '../service/bitcoinAverage-service';
   templateUrl: './lista-siglas.component.html',
   styleUrls: ['./lista-siglas.component.scss']
 })
+/**
+ * @class
+ * @implements - OnInit
+ * ListaSiglasComponent
+ */
 export class ListaSiglasComponent implements OnInit {
-public siglasMoedas = []
-public moedaSelecionada;
-public nova = []
+/**
+ * @public
+ * @type {any[]}
+ * atributo que guarda as siglas de todas as moedas
+ */
+public siglasMoedas : any []
+/**
+ * @public
+ * @type {any}
+ * atributo que guarda a moeda selecionada a partir da listagem no template
+ */
+public moedaSelecionada: any;
+/**
+ * @public
+ * @type {boolean}
+ * atributo de controle para mostrar a tabela
+ */
 public siglasCarregadas: boolean
-  constructor(private bitcoinAverage: BitcoinAverageService) { 
+
+/**
+ * @constructor
+ * @param { BitcoinAverageService } bitcoinAverage - atributo do serviço BitcoinAverageService
+ */
+  constructor(public bitcoinAverage: BitcoinAverageService) { 
     this.siglasCarregadas = false
+    this.siglasMoedas = []
   }
 
   ngOnInit() {
@@ -20,10 +45,8 @@ public siglasCarregadas: boolean
     this.bitcoinAverage.bucarNomesCriptoMoedas()
       .then((siglas:any)=>{
         this.siglasCarregadas = true
-        console.log(siglas)
        let siglasMoedasAux = Object.keys(siglas.crypto)
-        console.log(this.siglasMoedas)
-        siglasMoedasAux.map((sigla)=>{
+        siglasMoedasAux.map((sigla: any)=>{
           let moeda = {
             sigla: sigla,
             nome: siglas.crypto[sigla]
@@ -37,19 +60,17 @@ public siglasCarregadas: boolean
       })
   }
 
-  public selecionarMoeda(sigla: string){
-    this.moedaSelecionada = {
-      sigla: '',
-      valor: 0,
-      nome: ''
-    }
-        this.moedaSelecionada = this.siglasMoedas.find((moeda)=>{
+  /**
+   * Seleciona a moeda pela sigla 
+   * @public
+   * @param{string} sigla - sigla da moeda
+   */
+  
+  public selecionarMoeda(sigla: string){    
+      this.moedaSelecionada = this.siglasMoedas.find((moeda)=>{
             return moeda.sigla === sigla
-        })
-        this.bitcoinAverage.buscarUltimoValorPorMoeda(sigla)
-      .then((resposta: any)=>{
-        this.moedaSelecionada.valor = resposta.last
       })
   }
+  
 
 }

@@ -1,22 +1,54 @@
 import { ChartDataSets } from 'chart.js';
-import { Label, Color } from 'ng2-charts';
+import { Label, Color} from 'ng2-charts';
 
-// Classe Utils
+/**
+ * @class
+ * Classe Utils
+*/
 export class Utils{
+/**
+* @public
+@type {ChartDataSets} 
+* atributo que guarda os valores das linhas do gráfico*/
     public lineChartData: ChartDataSets[];
+/**
+* @public
+@type {Label} 
+* atributo que guarda os nomes dos labels do gráfico
+*/
     public lineChartLabels: Label[];  
+/**
+* @public
+@type {Color} 
+* atributo que guarda cores das bordas e do background do gráfico
+*/
     public lineChartColors: Color[];
-    public lineChartLegend;
-    public lineChartType;
-    public lineChartPlugins;
+/**
+* @public
+@type {string} 
+* atributo de controle para mostrar a legenda do gráfico
+*/
+    public lineChartLegend: string;
+/**
+* @public
+@type {string} 
+* Atributo que guarda tipo do gráfico
+*/
+    public lineChartType: string;
     
-    // Função que monta o gráfico
-  public montarGrafico(moeda: string, valores: [], cor: string){
+/**
+ * @public
+ * Função que monta o gráfico
+ * @param {string} moeda - nome da moeda com primeira letra maiúscula
+ * @param {number []} valores - valores do gráfico
+ * @param {string} cor - cor do gráfico
+ */
+  public montarGrafico(moeda: string, valores:number [], cor: string): any{
    
     let valorDeAbertura = valores
     
         this.lineChartLabels = [
-          'day', 'hour', 'month', 'month_3', 'month_6', 'week', 'year'];
+          'dia', 'hora', 'mês', 'mês 3', 'mês 6', 'semana', 'ano'];
     
         this.lineChartColors = [
           {
@@ -27,7 +59,7 @@ export class Utils{
     
         this.lineChartLegend = 'true';
         this.lineChartType = 'line';
-        this.lineChartPlugins = [];
+
         let grafico = {
             lineChartData :[
                 { data:
@@ -44,8 +76,7 @@ export class Utils{
             lineChartLabels: this.lineChartLabels,
             lineChartColors: this.lineChartColors,
             lineChartLegend: this.lineChartLegend,
-            lineChartType: this.lineChartType,
-            lineChartPlugins: this.lineChartPlugins
+            lineChartType: this.lineChartType
         }
 
         return grafico

@@ -1,27 +1,52 @@
 # CriptoMoedas
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.0.
+## Descrição do Projeto
 
-## Development server
+    Este projeto consiste num pequeno Dashboard onde o usuário poderá visualizar os valores
+    do Bitcoin, Litecoin e Ethereum atualizadas a cada 15 segundos. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+    Há um menu que mostra uma tabela com as siglas e nomes das Cripto Moeadas.
 
-## Code scaffolding
+## Pré-requisitos
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    - Node
+    - NPM
+    - Angular CLI
+
+## Ferramentas Utilizadas e Versões
+
+    - Angular CLI: 7.3.9
+    - Node: 10.16.0
+    - Angular 8.2.14
+        - HttpClient
+        - TypeScript
+    - Bootstrap 4.4.1
+    - Chart.js 2.9.3
+    - Crypto-js 3.1.9-1
+    - types/crypto-js 3.1.43
+    - ng2-charts 2.3.0
+    - Popper.js 1.16.0
+    - rxjs 6.4.0
+    - tslib 1.10.0
+    - zone.js 0.9.1
+    - tslint 5.15.0
+    - SASS - SCSS
+
+## Instruções para iniciar o projeto e informações sobre o Angular!
+
+## Como Executar o Projeto
+
+Navegue até a pasta do projeto e execute o comando `npm install`. Esse comando irá instalar todas as 
+dependências que estáo no arquivo `package.json`
+
+## Criar Componente
+
+Execute `ng generated componente <nome do componente>` ou `ng g c <nome do componente>` para criar um componente
+
+## Servidor de Desenvolvimento
+
+Execute o comando: `ng serve` para o servidor de desenvolvimento. Navegue para `http://localhost:4200/`. O app vai atualizar automaticamente quando alguma alteração no código for salva
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Execute `ng build` Para gerar a build do projeto. A build gerada terá como padrão o diretório `dist/`. Use a flag `--prod` para gerar a build de produção.

@@ -5,8 +5,16 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss']
 })
+/**
+ * @class
+ * @implements - OnInit
+ * MenuComponent
+ */
 export class MenuComponent implements OnInit {
 
+/**
+  * @constructor
+  */
   constructor() { }
 
   ngOnInit() {

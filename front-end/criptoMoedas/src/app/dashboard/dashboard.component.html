@@ -71,9 +71,9 @@
             </div>
         </div>
         <div class="container offset-lg-9" id="btnGrafico">
-          <button (click)="montarGraficoBitcoin()" class="btn btn-success">BiT</button>
-          <button (click)="montarGraficoLitecoin()" class="btn btn-primary">LIT</button>
-          <button (click)="montarGraficoEthereum()" class="btn btn-danger ">ETH</button>
+          <button (click)="montarGrafico(true, false, false, 'Bitcoin', 'rgba(0, 100, 0)')" class="btn btn-success">BiT</button>
+          <button (click)="montarGrafico(false, true, false, 'Litecoin', 'rgba(30, 144, 255)')" class="btn btn-primary">LIT</button>
+          <button (click)="montarGrafico(false, false, true, 'Ethereum', 'rgba(255, 0, 0)')" class="btn btn-danger ">ETH</button>
 
         </div>
         <div id="grafico" *ngIf="graficoBitcoin" class="col-xl-12 col-md-12 mb-12">
@@ -87,7 +87,7 @@
                         [colors]="grafico.lineChartColors"
                         [legend]="grafico.lineChartLegend"
                         [chartType]="grafico.lineChartType"
-                        [plugins]="grafico.lineChartPlugins">
+                        >
                       </canvas>
                     </div>
                     

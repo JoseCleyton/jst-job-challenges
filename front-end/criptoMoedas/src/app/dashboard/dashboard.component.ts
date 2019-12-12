@@ -99,6 +99,7 @@ export class DashboardComponent implements OnInit {
       this.cotacaoMoedas['ethereum'] = resposta    
       this.montarGrafico(false, false, true, 'Ethereum', 'rgba(255, 0, 0)') 
     })
+    
   this.atualizaDashboard() 
   
   }
@@ -140,7 +141,8 @@ export class DashboardComponent implements OnInit {
    */ 
   private atualizaDashboard(){
     
-      this.buscarCotacao('bitcoin', 'BTC')
+    setInterval(()=>{
+        this.buscarCotacao('bitcoin', 'BTC')
         .then((resposta:any)=>{
           this.carregamento = false
           this.cotacaoMoedas['bitcoin'] = resposta 
@@ -154,7 +156,8 @@ export class DashboardComponent implements OnInit {
         .then((resposta:any)=>{
           this.carregamento = false
           this.cotacaoMoedas['ethereum'] = resposta
-        })     
+        }) 
+    },15000)  
     
   }
 

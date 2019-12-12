@@ -25,6 +25,7 @@
         - HttpClient
         - TypeScript
     - Bootstrap 4.4.1
+    - FonteAwesome
     - Chart.js 2.9.3
     - Crypto-js 3.1.9-1
     - types/crypto-js 3.1.43

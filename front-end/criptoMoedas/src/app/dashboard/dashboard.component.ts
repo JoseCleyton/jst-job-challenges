@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { BitcoinAverageService } from '../service/bitcoinAverage-service'
 import { Utils } from '../utils/utils'
 @Component({
@@ -11,7 +11,7 @@ import { Utils } from '../utils/utils'
  * @implements - OnInit
  * DashboardComponent
  */
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit , OnDestroy{
   /**
    * @public
    * @type {boolean}
@@ -57,7 +57,7 @@ export class DashboardComponent implements OnInit {
   Arrays que guarda as cotações de cada moeda
   */
   public cotacaoMoedas:any = []
-
+public intervalo
   /**
    * @public
    * @type {any}
@@ -141,24 +141,31 @@ export class DashboardComponent implements OnInit {
    */ 
   private atualizaDashboard(){
     
-    setInterval(()=>{
+   this.intervalo = setInterval(()=>{
         this.buscarCotacao('bitcoin', 'BTC')
         .then((resposta:any)=>{
           this.carregamento = false
           this.cotacaoMoedas['bitcoin'] = resposta 
+          console.log('Buscando')
         })
       this.buscarCotacao('litecoin','LTC')
         .then((resposta:any)=>{
           this.carregamento = false
           this.cotacaoMoedas['litecoin'] = resposta 
+          console.log('Buscando')
         })
       this.buscarCotacao('ethereum', 'ETH') 
         .then((resposta:any)=>{
           this.carregamento = false
           this.cotacaoMoedas['ethereum'] = resposta
+          console.log('Buscando')
         }) 
     },15000)  
     
   }
 
+  ngOnDestroy(){
+    clearInterval(this.intervalo)
+  }
+  
 }

@@ -53,7 +53,6 @@ public siglasCarregadas: boolean
           }
           this.siglasMoedas.push(moeda)
         })
-        console.log(this.siglasMoedas)
       })
       .catch(()=>{
         this.siglasCarregadas = false
